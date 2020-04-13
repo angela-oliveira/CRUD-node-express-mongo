@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <title>My CRUD in NodeJS</title>
+</head>
+<body>
+
+    <div class="container">
+        <p>Registros</p>
+
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <td>Ingles</td>
+                    <td>Portugues</td>
+                    <td>Ação</td>
+                </tr>
+            </thead>
+            <tbody>
+            <% data.forEach(function(details) { %>
+                <tr>
+                    <td><%= details.ingles %></td>
+                    <td><%= details.portugues %></td>
+                    <td><a href="/edit/<%=details._id %>">Editar</a>-<a href="/delete/<%=details._id %>">Delete</a></td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <button>
+            <a href="/" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+
+        </button>
+    </div>
+</body>
+</html>
